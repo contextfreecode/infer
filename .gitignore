@@ -1,0 +1,7 @@
+/env.sh
+/ghc-out
+/infer
+/notes.txt
+*.class
+obj/
+target/
