@@ -11,5 +11,6 @@ main = do
     let colors = ["red", "yellow", "blue"]
     -- let colors :: [String] = ["red", "yellow", "blue"]
     let showColor = uncurry $ printf "Color %d: %s"
+    -- let showColor (index, color) = "Color " ++ (show index) ++ ": " ++ color
     -- mapM_ putStrLn $ map showColor $ (enumerate colors :: [(Int, String)])
     mapM_ putStrLn $ map showColor $ enumerate colors
