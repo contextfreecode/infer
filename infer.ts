@@ -2,22 +2,21 @@
 
 type Ab = { a: number; b: number };
 
-function f<AbPlus extends Ab>(thing: AbPlus) {
-  return { ...thing, sum: thing.a + thing.b };
-}
-
-function g(thing: Ab) {
-  return f(thing);
-}
-
 function main() {
+  let abc = { a: 1, b: 2, c: 100 };
+  let result = withSumAb(abc);
+  console.log(result);
 
-  let answer = f({ a: 1, b: 2, c: 100 });
-  console.log(answer);
+  let resultPlus = withSum(abc);
+  console.log(resultPlus);
+}
 
-  let answer2 = g({ a: 1, b: 2, c: 100 } as Ab);
-  console.log(answer2);
+function withSumAb(ab: Ab) {
+  return withSum(ab);
+}
 
+function withSum<AbPlus extends Ab>(abPlus: AbPlus) {
+  return { ...abPlus, sum: abPlus.a + abPlus.b };
 }
 
 main();
