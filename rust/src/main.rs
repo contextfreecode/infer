@@ -1,12 +1,12 @@
 fn main() {
     let colors = vec!["red", "yellow", "blue"];
-    let mut colors2 = vec![];
-    colors2.extend(colors);
+    let mut colors2 = vec![];  // or Vec::new()
+    colors2.extend(colors.clone());
     for (index, color) in colors2.iter().enumerate() {
-        println!("Color {}: {}", index, to_uppercase(*color));
+        println!("Color {}: {}", index, color);
     }
 }
 
-fn to_uppercase<Str: Into<String>>(color: Str) -> String {
-    color.into().to_uppercase()
-}
+// fn to_uppercase<Str: Into<String>>(color: Str) -> String {
+//     color.into().to_uppercase()
+// }

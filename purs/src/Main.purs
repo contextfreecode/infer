@@ -9,4 +9,4 @@ main :: Effect Unit
 main = do
   let colors = ["red", "yellow", "blue"]
   forWithIndex_ colors \index color -> do
-    log $ "Color " <> (show index) <> ": " <> color
+    log $ "Color " <> show index <> ": " <> color
